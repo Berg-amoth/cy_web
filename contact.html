@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Site Marchant</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <header>
+            <h1><a href="index.html"><img src="img/logo.png" alt="Logo representant trois pommes de terres">   Cartoufles</a></h1>
+            
+            <nav>
+                <a href="products_list.html">Produits</a>
+                <a href="about_us.html">&Agrave; propos de nous</a>
+                <a href="contact.html">Contact</a>
+                <a href="">Connexion</a>                
+            </nav>
+        </header>
+        
+        <main>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="cheap.html">Le meilleur go&ucirc;t &agrave; petit prix</a></li>
+                    <li><a href="best_sellers.html">Les meilleures ventes</a></li>
+                    <li><a href="prime.html">Nos produits d'excellence</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <section class="full_width">
+                <h2>Une question ? Une remarque ? Posez nous une question !</h2>
+
+                <form method="POST" action="" id="contact_form">
+                    <textarea name="contact_text" id="contact_text" cols="2" rows="6" form="contact_form" placeholder="Posez votre question ici" required></textarea>
+                    <input type="text" name="nom" id="nom" placeholder="NOM" required>
+                    <input type="text" name="prenom" id="prenom" placeholder="Prenom" required>
+                    <input type="date" name="naissance" id="naissance" required>
+                    <input type="email" name="email" id="email" placeholder="Email pour vous répondre" required>
+                    <div>
+                        <p>Vous etes un :</p>
+                        <input type="radio" id="restaurateur" name="metier" value="restaurateur" required>
+                        <label for="restaurateur">Restaurateur</label>
+
+                        <input type="radio" id="revendeur" name="metier" value="revendeur">
+                        <label for="revendeur">Revendeur</label>
+                        
+                        <input type="radio" id="particulier" name="metier" value="particulier">
+                        <label for="particulier">Particulier</label>
+                    </div>
+                    <input type="submit" value="envoyer">
+                </form>
+            </section>
+        </main>
+        
+        <footer>
+            <p>2020 Cartoufles - © Cartoufles</p>
+            <a href="">Mentions legales - Cartoufles web</a>
+        </footer>
+    </body>
+</html>
