@@ -11,6 +11,7 @@
             <h1><a href="index.html"><img src="img/logo.png" alt="Logo representant trois pommes de terres">   Cartoufles</a></h1>
             
             <nav>
+                <a href="index.html">Accueil</a>
                 <a href="products_list.html">Produits</a>
                 <a href="about_us.html">&Agrave; propos de nous</a>
                 <a href="contact.html">Contact</a>
@@ -33,23 +34,44 @@
                 <h2>Une question ? Une remarque ? Posez nous une question !</h2>
 
                 <form method="POST" action="" id="contact_form">
-                    <textarea name="contact_text" id="contact_text" cols="2" rows="6" form="contact_form" placeholder="Posez votre question ici" required></textarea>
-                    <input type="text" name="nom" id="nom" placeholder="NOM" required>
-                    <input type="text" name="prenom" id="prenom" placeholder="Prenom" required>
-                    <input type="date" name="naissance" id="naissance" required>
-                    <input type="email" name="email" id="email" placeholder="Email pour vous répondre" required>
-                    <div>
-                        <p>Vous etes un :</p>
-                        <input type="radio" id="restaurateur" name="metier" value="restaurateur" required>
-                        <label for="restaurateur">Restaurateur</label>
-
-                        <input type="radio" id="revendeur" name="metier" value="revendeur">
-                        <label for="revendeur">Revendeur</label>
-                        
-                        <input type="radio" id="particulier" name="metier" value="particulier">
-                        <label for="particulier">Particulier</label>
+                    
+                    <h3 id="txt_nom">Nom</h3>
+                    <input class="form_txt" id="nom" type="text" name="nom" id="nom" placeholder="NOM" required>
+                    <input class="form_txt" id="prenom" type="text" name="prenom" id="prenom" placeholder="Prenom" required>
+                    <h3 id="txt_naissance">Date de naissance</h3>
+                    <input class="form_txt" id="naissance" type="date" name="naissance" id="naissance" required>
+                    <h3 id="txt_email">Email</h3>
+                    <input class="form_txt" id="email" type="email" name="email" id="email" placeholder="Email pour vous répondre" required>
+                    
+                    <h3 id="txt_genre">Genre</h3>
+                    <div id="genre">
+                        <div>
+                            <input type="radio" id="homme" name="genre" value="homme" required>
+                            <label for="homme">Homme</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="femme" name="genre" value="femme">
+                            <label for="femme">Femme</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="nspp" name="genre" value="nspp">
+                            <label for="nspp">Ne se prononce pas</label>
+                        </div>
                     </div>
-                    <input type="submit" value="envoyer">
+
+                    <h3 id="txt_metier">Metier</h3>
+                    <select name="metier" id="metier">
+                        <option value="fournisseur">Fournisseur</option>
+                        <option value="restaurateur">Restaurateur</option>
+                        <option value="particulier">Particulier</option>
+                    </select>
+                    
+                    
+                   
+                    <h3 id="txt_message">Votre message</h3>
+                    <input class="form_txt" type="text" id="objet" name="objet" placeholder="Objet" required>
+                    <textarea name="contact_text" id="contact_text" cols="2" rows="6" form="contact_form" placeholder="Posez votre question ici" required></textarea>
+                    <input id="submit" type="submit" value="envoyer">
                 </form>
             </section>
         </main>

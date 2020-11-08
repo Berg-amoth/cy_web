@@ -80,9 +80,10 @@ body {
 
         td {
             text-align: center;
+            width: 16vh;
         }
             td > img {
-                width: 20vh;
+                width: 18vh;
             }
 
     footer {
@@ -155,6 +156,79 @@ body {
     }
 
     form {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        column-gap: 10px;
+        justify-content: center;
     }
+
+        #txt_nom {
+            grid-column: 1 / span 2;
+            grid-row: 1;
+        }
+        #nom {
+            grid-column: 1;
+            grid-row: 2;
+        }
+        #prenom {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        #txt_naissance {
+            grid-column: 1;
+            grid-row: 3;
+        }
+        #naissance {
+            grid-column: 1;
+            grid-row: 4;
+        }
+
+        #txt_email {
+            grid-column: 2;
+            grid-row: 3;
+        }
+        #email {
+            grid-column: 2;
+            grid-row: 4;
+        }
+
+        #txt_genre {
+            grid-column: 1;
+            grid-row: 5;
+        }
+        #genre {
+            grid-column: 1;
+            grid-row: 6;
+        }
+
+        #txt_metier {
+            grid-column: 2;
+            grid-row: 5;
+        }
+        #metier {
+            grid-column: 2;
+            grid-row: 6;
+        }
+
+        #txt_message {
+            grid-column: 1 / span 2;
+            grid-row: 7;
+        }
+        #objet {
+            grid-column: 1 / span 2;
+            grid-row: 8;
+        }
+        #contact_text {
+            grid-column: 1 / span 2;
+            grid-row: 9;
+        }
+
+        #submit {
+            grid-column: 1 / span 2;
+            grid-row: 10;
+        }
+
+        .form_txt {
+            height: 25px;
+            min-width: 180px;
+        }
