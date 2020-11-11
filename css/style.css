@@ -61,6 +61,7 @@ body {
                     }
 
         section {
+            flex-grow: 1;
             padding: 3vh;
             padding-top: 1vh;
         }
@@ -80,11 +81,28 @@ body {
 
         td {
             text-align: center;
-            width: 16vh;
+            min-width: 18vh;
         }
             td > img {
                 width: 18vh;
             }
+
+            .stock {
+                display: none;
+            }
+
+                .quantite_produit {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                }
+
+                    .quantite_produit > p {
+                        margin: 10px;
+                    }
+                    .quantite_produit > button {
+                        
+                    }
 
     footer {
         background-color: #493548;
