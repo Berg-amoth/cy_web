@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Site Marchant</title>
+        <title>Cartoufles</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/style.css">
     </head>
@@ -43,45 +43,94 @@
                             <td><h4>Photo</h4></td>
                             <td><h4>R&eacute;f&eacute;rence</h4></td>
                             <td><h4>D&eacute;signation</h4></td>
+                            <td class="stock"><h4>Stock disponible (kg)</h4></td>
                             <td><h4>Prix</h4></td>
+                            <td><h4>Quantit&eacute; command&eacute;e</h4></td>
                         </tr>
 
                         <tr>
                             <td><img src="img/prime/1.jpg" alt=""></td>
                             <td>#301</td>
                             <td>La folle</td>
+                            <td class="stock">104</td>
                             <td>5,47€</td>
+                            <td>
+                                <div class="quantite_produit">
+                                    <button class="bouton_moins" name="1">-</button>
+                                    <p>0</p>
+                                    <button class="bouton_plus" name="1">+</button>
+                                </div>
+                                <button>Ajouter au panier</button>
+                            </td>
                         </tr>
                         
                         <tr>
                             <td><img src="img/prime/2.jpg" alt=""></td>
                             <td>#302</td>
                             <td>La pomme carotte</td>
+                            <td class="stock">20</td>
                             <td>5,51€</td>
+                            <td>
+                                <div class="quantite_produit">
+                                    <button class="bouton_moins" name="2">-</button>
+                                    <p>0</p>
+                                    <button class="bouton_plus" name="2">+</button>
+                                </div>
+                                <button>Ajouter au panier</button>
+                            </td>
                         </tr>
                         
                         <tr>
                             <td><img src="img/prime/3.png" alt=""></td>
                             <td>#303</td>
                             <td>La sautee</td>
+                            <td class="stock">10</td>
                             <td>5,35€</td>
+                            <td>
+                                <div class="quantite_produit">
+                                    <button class="bouton_moins" name="3">-</button>
+                                    <p>0</p>
+                                    <button class="bouton_plus" name="3">+</button>
+                                </div>
+                                <button>Ajouter au panier</button>
+                            </td>
                         </tr>
     
                         <tr>
                             <td><img src="img/prime/4.jpeg" alt=""></td>
                             <td>#304</td>
                             <td>La belge</td>
+                            <td class="stock">31</td>
                             <td>5,96€</td>
+                            <td>
+                                <div class="quantite_produit">
+                                    <button class="bouton_moins" name="4">-</button>
+                                    <p>0</p>
+                                    <button class="bouton_plus" name="4">+</button>
+                                </div>
+                                <button>Ajouter au panier</button>
+                            </td>
                         </tr>
     
                         <tr>
                             <td><img src="img/prime/5.jpeg" alt=""></td>
                             <td>#305</td>
                             <td>L'ultime</td>
+                            <td class="stock">0</td>
                             <td>5,99€</td>
+                            <td>
+                                <div class="quantite_produit">
+                                    <button class="bouton_moins" name="5">-</button>
+                                    <p>0</p>
+                                    <button class="bouton_plus" name="5">+</button>
+                                </div>
+                                <button>Ajouter au panier</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
+
+                <button id="bouton_stock">Afficher le stock</button>
             </section>
         </main>
         
@@ -89,5 +138,7 @@
             <p>2020 Cartoufles - © Cartoufles</p>
             <a href="">Mentions legales - Cartoufles web</a>
         </footer>
+
+        <script src="js/produits.js"></script>
     </body>
 </html>

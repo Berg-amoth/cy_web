@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Site Marchant</title>
+        <title>Cartoufles</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/style.css">
     </head>
@@ -31,13 +31,13 @@
             </nav>
 
             <section class="full_width">
-                <h2>Une question ? Une remarque ? Posez nous une question !</h2>
+                <h2>Une question ? Une remarque ? Contactez nous !</h2>
 
                 <form method="POST" action="" id="contact_form">
                     
                     <h3 id="txt_nom">Nom</h3>
-                    <input class="form_txt" id="nom" type="text" name="nom" id="nom" placeholder="NOM" required>
-                    <input class="form_txt" id="prenom" type="text" name="prenom" id="prenom" placeholder="Prenom" required>
+                    <input class="form_txt" id="nom" type="text" name="nom" id="nom" placeholder="NOM" pattern="[A-Z]+" required>
+                    <input class="form_txt" id="prenom" type="text" name="prenom" id="prenom" placeholder="Prenom" pattern="[A-Z][a-z]+" required>
                     <h3 id="txt_naissance">Date de naissance</h3>
                     <input class="form_txt" id="naissance" type="date" name="naissance" id="naissance" required>
                     <h3 id="txt_email">Email</h3>
@@ -80,5 +80,7 @@
             <p>2020 Cartoufles - © Cartoufles</p>
             <a href="">Mentions legales - Cartoufles web</a>
         </footer>
+
+        <script src="js/form.js"></script>
     </body>
 </html>
