@@ -3,21 +3,11 @@
     <head>
         <title>Cartoufles</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="../css/style.css">
     </head>
 
     <body>
-        <header>
-            <h1><a href="index.html"><img src="img/logo.png" alt="Logo representant trois pommes de terres">   Cartoufles</a></h1>
-            
-            <nav>
-                <a href="index.html">Accueil</a>
-                <a href="products_list.html">Produits</a>
-                <a href="about_us.html">&Agrave; propos de nous</a>
-                <a href="contact.html">Contact</a>
-                <a href="">Connexion</a>                
-            </nav>
-        </header>
+        <?php include '../header.html' ?>
 
         <main>
             <nav>
@@ -134,10 +124,7 @@
             </section>
         </main>
         
-        <footer>
-            <p>2020 Cartoufles - © Cartoufles</p>
-            <a href="">Mentions legales - Cartoufles web</a>
-        </footer>
+        <?php include '../footer.html' ?>
 
         <script src="js/produits.js"></script>
     </body>
