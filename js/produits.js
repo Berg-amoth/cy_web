@@ -25,28 +25,28 @@ function afficher_masquer() {
 // tableau dans lequel les valeurs sont stockees (coming soon : pour les restituer ensuite au serveur)
 function enlever_produit() {
     // Modifie la valeur
-    tableau_quantites[parseInt(this.getAttribute("name")) - 1] = tableau_quantites[parseInt(this.getAttribute("name")) - 1] - 1;
-    this.parentElement.getElementsByTagName("p")[0].innerHTML = tableau_quantites[parseInt(this.getAttribute("name")) - 1];
+    tableau_quantites[parseInt(this.getAttribute("name").slice(2)) - 1] = tableau_quantites[parseInt(this.getAttribute("name").slice(2)) - 1] - 1;
+    this.parentElement.getElementsByTagName("p")[0].innerHTML = tableau_quantites[parseInt(this.getAttribute("name").slice(2)) - 1];
     // Desactive le bouton moins si on arrive a zero
-    if (tableau_quantites[parseInt(this.getAttribute("name")) - 1] == 0) {
+    if (tableau_quantites[parseInt(this.getAttribute("name").slice(2)) - 1] == 0) {
         this.disabled = true;
     }
     // Reactive le bouton si on en a moins que le stock disponible
-    if (tableau_quantites[parseInt(this.getAttribute("name")) - 1] < tableau_stocks[parseInt(this.getAttribute("name")) - 1]) {
+    if (tableau_quantites[parseInt(this.getAttribute("name").slice(2)) - 1] < tableau_stocks[parseInt(this.getAttribute("name").slice(2)) - 1]) {
         this.parentElement.getElementsByClassName("bouton_plus")[0].disabled = false;
     }
     console.log(tableau_quantites);
 }
 
 function ajouter_produit() {
-    tableau_quantites[parseInt(this.getAttribute("name")) - 1] = tableau_quantites[parseInt(this.getAttribute("name")) - 1] + 1;
-    this.parentElement.getElementsByTagName("p")[0].innerHTML = tableau_quantites[parseInt(this.getAttribute("name")) - 1];
+    tableau_quantites[parseInt(this.getAttribute("name").slice(2)) - 1] = tableau_quantites[parseInt(this.getAttribute("name").slice(2)) - 1] + 1;
+    this.parentElement.getElementsByTagName("p")[0].innerHTML = tableau_quantites[parseInt(this.getAttribute("name").slice(2)) - 1];
     // Desactive le bouton plus si on arrive a la quantite disponible
-    if (tableau_quantites[parseInt(this.getAttribute("name")) - 1] == tableau_stocks[parseInt(this.getAttribute("name")) - 1]) {
+    if (tableau_quantites[parseInt(this.getAttribute("name").slice(2)) - 1] == tableau_stocks[parseInt(this.getAttribute("name").slice(2)) - 1]) {
         this.disabled = true;
     }
     // Reactive le bouton si on en a plus (+) qu'un
-    if (tableau_quantites[parseInt(this.getAttribute("name")) - 1] > 0) {
+    if (tableau_quantites[parseInt(this.getAttribute("name").slice(2)) - 1] > 0) {
         this.parentElement.getElementsByClassName("bouton_moins")[0].disabled = false;
     }
     console.log(tableau_quantites);

@@ -1,24 +1,16 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Cartoufles</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="../css/style.css">
-    </head>
+    <?php require 'head.html' ?>
 
     <body>
-        <?php include '../header.html' ?>
+        <?php require 'header.html' ?>
 
         <main>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="cheap.html">Le meilleur go&ucirc;t &agrave; petit prix</a></li>
-                    <li><a href="best_sellers.html">Les meilleures ventes</a></li>
-                    <li><a href="prime.html">Nos produits d'excellence</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+            <?php require 'side_nav.php' ?>
     
             <section class="products">
                 <table>
@@ -124,7 +116,7 @@
             </section>
         </main>
         
-        <?php include '../footer.html' ?>
+        <?php require 'footer.html' ?>
 
         <script src="js/produits.js"></script>
     </body>
