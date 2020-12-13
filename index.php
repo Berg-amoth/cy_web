@@ -11,7 +11,7 @@ require "php/varSession.inc.php";
         <?php require 'header.html' ?>
 
         <main>
-            <?php require 'side_nav.php' ?>
+            <?php require 'php/side_nav.php' ?>
     
             <section id="news">
                 <h2>Nouveaut&eacute;s</h2>

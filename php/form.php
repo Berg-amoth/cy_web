@@ -1,58 +1,118 @@
 <?php
+    $_SESSION['post'] = $_POST;
     $nom_ok = TRUE;
     $prenom_ok = TRUE;
     $date_ok = TRUE;
     $email_ok = TRUE;
     $genre_ok = TRUE;
+    $objet_ok = TRUE;
+    $message_ok = TRUE;
 
 // Processing each input
     // NOM
     $nom = trim($_POST['nom']);
     if (!preg_match("#^[A-Z]+$#", $nom)) {
         $nom_ok = FALSE;
-        echo "nom non";
+        // echo "nom non";
     }
 
     // PRENOM
     $prenom = trim($_POST['prenom']);
     if (!preg_match("#^[A-Z][a-z]+$#", $prenom)) {
         $prenom_ok = FALSE;
-        echo "prenom non";
+        // echo "prenom non";
     }
 
     // DATE DE NAISSANCE
-    $date = intval($_POST['naissance']);
-    if ($date > date("Y")-6 || $date < date("Y")-122) {
+    $date = $_POST['naissance'];
+    if (intval($date) > date("Y")-6 || intval($date) < date("Y")-122) {
         $date_ok = FALSE;
-        echo "date non";
+        // echo "date non";
     }
 
     // EMAIL
     $email = trim($_POST['email']);
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $email_ok = FALSE;
-        echo "email non";
+        // echo "email non";
     }
 
     // GENRE
     $genre = $_POST['genre'];
     if ($genre != "homme" && $genre != "femme" && $genre != "nspp") {
         $genre_ok = FALSE;
-        echo "genre non";
+        // echo "genre non";
     }
 
     // OBJET
     $objet = trim($_POST['objet']);
+    if ($objet == "") {
+        $objet_ok = FALSE;
+    }
 
     // MESSAGE
     $message = trim($_POST['contact_text']);
+    if ($message == "") {
+        $message_ok = FALSE;
+    }
 
     // ENVOIE DU MAIL
-    if ($genre_ok && $email_ok && $date_ok && $prenom_ok && $nom_ok) {
-        $headers = 'From: ' . $prenom . ' ' . $nom . ' <' . $email . ">\r\n";
+    if ($genre_ok && $email_ok && $date_ok && $prenom_ok && $nom_ok && $objet_ok && $message_ok) {
+        $headers = 'From: ' . $prenom . ' ' . $nom . ' &lt;' . $email . "&gt;\r\n";
         $headers .= 'Reply-To: ' . $email . "\r\n";
-        $headers .= 'X-Mailer: PHP/' . phpversion();
-        echo $headers;
-        var_dump(mail("trash.for.projects@gmail.com",$objet,$message,$headers));
+        $headers .= "Content-type: text/html\r\n";
+        if (mail("trash.for.projects@gmail.com",$objet,$message,$headers)) {
+            header("Refresh : 0; url=contact.php?answer");
+        }
+        else {
+            header("Refresh : 0; url=contact.php?answer");
+        }
+    }
+    else {
+        $header_content = "Refresh: 0; url=../contact.php?";
+        if (!$genre_ok) {
+            $header_content .= "genre=ko";
+        }
+        else {
+            $header_content .= "genre=" . $genre;
+        }
+        if (!$email_ok) {
+            $header_content .= "&email=ko";
+        }
+        else {
+            $header_content .= "&email=" . $email;
+        }
+        if (!$date_ok) {
+            $header_content .= "&date=ko";
+        }
+        else {
+            $header_content .= "&date=" . $date;
+        }
+        if (!$prenom_ok) {
+            $header_content .= "&prenom=ko";
+        }
+        else {
+            $header_content .= "&prenom=" . $prenom;
+        }
+        if (!$nom_ok) {
+            $header_content .= "&nom=ko";
+        }
+        else {
+            $header_content .= "&nom=" . $nom;
+        }
+        if (!$objet_ok) {
+            $header_content .= "&objet=ko";
+        }
+        else {
+            $header_content .= "&objet=" . $objet;
+        }
+        if (!$message_ok) {
+            $header_content .= "&message=ko";
+        }
+        else {
+            $header_content .= "&message=" . $message;
+        }
+
+        header($header_content);
     }
 ?>

@@ -10,7 +10,7 @@ session_start();
         <?php require 'header.html' ?>
 
         <main>
-            <?php require 'side_nav.php' ?>
+            <?php require 'php/side_nav.php' ?>
     
             <section class="products">
                 <table>

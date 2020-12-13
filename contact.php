@@ -10,7 +10,7 @@ session_start();
         <?php require 'header.html' ?>
         
         <main>
-            <?php require 'side_nav.php' ?>
+            <?php require 'php/side_nav.php' ?>
 
             <section class="full_width">
                 <h2>Une question ? Une remarque ? Contactez nous !</h2>
@@ -18,12 +18,66 @@ session_start();
                 <form method="POST" action="php/form.php" id="contact_form">
                     <!-- Without pattern or required options to test php processing -->
                     <h3 id="txt_nom">Nom</h3>
-                    <input class="form_txt" id="nom" type="text" name="nom" id="nom" placeholder="NOM">
-                    <input class="form_txt" id="prenom" type="text" name="prenom" id="prenom" placeholder="Prenom">
+                    <?php
+                    // NOM
+                    if (isset($_GET['nom'])) {
+                        if ($_GET['nom'] != "ko"){
+                            echo "<input class=\"form_txt\" id=\"nom\" type=\"text\" name=\"nom\" id=\"nom\" value=\"" . $_GET['nom'] . "\">";
+                        }
+                        else {
+                            echo "<input class=\"form_txt\" id=\"nom\" type=\"text\" name=\"nom\" id=\"nom\" placeholder=\"NOM : EN MAJUSCULES\" style=\"background-color:red;\">";
+                        }
+                    }
+                    else {
+                        echo "<input class=\"form_txt\" id=\"nom\" type=\"text\" name=\"nom\" id=\"nom\" placeholder=\"NOM\">";
+                    }
+
+                    // PRENOM
+                    if (isset($_GET['prenom'])) {
+                        if ($_GET['prenom'] != "ko"){
+                            echo "<input class=\"form_txt\" id=\"prenom\" type=\"text\" name=\"prenom\" id=\"prenom\" value=\"" . $_GET['prenom'] . "\">";
+                        }
+                        else {
+                            echo "<input class=\"form_txt\" id=\"prenom\" type=\"text\" name=\"prenom\" id=\"prenom\" placeholder=\"Prenom : Une maj -> minuscules\" style=\"background-color:red;\">";
+                        }
+                    }
+                    else {
+                        echo "<input class=\"form_txt\" id=\"prenom\" type=\"text\" name=\"prenom\" id=\"prenom\" placeholder=\"Prenom\">";
+                    }
+                    ?>
+
+                    <!-- DATE DE NAISSANCE -->
                     <h3 id="txt_naissance">Date de naissance</h3>
-                    <input class="form_txt" id="naissance" type="date" name="naissance" id="naissance">
+                    <?php
+                    if (isset($_GET['date'])) {
+                        if ($_GET['date'] != "ko") {
+                            echo "<input class=\"form_txt\" id=\"naissance\" type=\"date\" name=\"naissance\" value=\"" . $_GET['date'] . "\">";
+                        }
+                        else {
+                            echo "<input class=\"form_txt\" id=\"naissance\" type=\"date\" name=\"naissance\" style=\"background-color:red;\">";
+                        }
+                    }
+                    else {
+                        echo "<input class=\"form_txt\" id=\"naissance\" type=\"date\" name=\"naissance\">";
+                    }
+                    ?>
+                    
+                    <!-- EMAIL -->
                     <h3 id="txt_email">Email</h3>
-                    <input class="form_txt" id="email" type="email" name="email" id="email" placeholder="Email pour vous répondre">
+                    <?php
+                        if (isset($_GET['email'])) {
+                            if ($_GET['email'] != "ko"){
+                                echo "<input class=\"form_txt\" id=\"email\" type=\"email\" name=\"email\" id=\"email\" value=\"" . $_GET['email'] . "\">";
+                            }
+                            else {
+                                echo "<input class=\"form_txt\" id=\"email\" type=\"email\" name=\"email\" id=\"email\" placeholder=\"votremail@domaine.fr\" style=\"background-color:red;\">";
+                            }
+                        }
+                        else {
+                            echo "<input class=\"form_txt\" id=\"email\" type=\"email\" name=\"email\" id=\"email\" placeholder=\"Email pour vous répondre\">";
+                        }
+                    ?>
+                    
                     
                     <h3 id="txt_genre">Genre</h3>
                     <div id="genre">

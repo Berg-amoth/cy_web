@@ -2,6 +2,8 @@
 session_start();
 ?>
 
+<!-- CE FICHIER SERA SUPPRIME A LA PROCHAINE VERSION -->
+
 <!DOCTYPE html>
 <html>
     <?php require 'head.html' ?>
@@ -10,7 +12,7 @@ session_start();
         <?php require 'header.html' ?>
 
         <main>
-            <?php require 'side_nav.php' ?>
+            <?php require 'php/side_nav.php' ?>
     
             <section class="products">
                 <table>

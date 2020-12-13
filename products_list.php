@@ -10,7 +10,7 @@ session_start();
         <?php require 'header.html' ?>
         
         <main>
-            <?php require 'side_nav.php' ?>
+            <?php require 'php/side_nav.php' ?>
     
             <section id="products_list">
                 <h2>Nos produits, les meilleurs du marchés à tous les prix</h2>
