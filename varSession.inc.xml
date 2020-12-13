@@ -1,27 +1,28 @@
-<!-- Attention, lors de la creation d'une nouvelle categorie, le sous-repertoire contenant ses images doit etre nomme de la meme facon que la categorie en question -->
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Attention, lors de la creation d'une nouvelle categorie, le sous-repertoire contenant ses images doit etre nomme de la meme facon que la categorie en question -->
+
 <categories>
     <categorie id="cheap">
-        <produit designation="La classique" stock="5" price="1.45">101</produit>
-        <produit designation="La jaune" stock="4" price="1.49">102</produit>
-        <produit designation="La petite" stock="8" price="1.59">103</produit>
-        <produit designation="La douce" stock="0" price="1.75">104</produit>
-        <produit designation="La frite" stock="87" price="1.82">105</produit>
+        <product designation="La classique" stock="5" price="1.45">101</product>
+        <product designation="La jaune" stock="4" price="1.49">102</product>
+        <product designation="La petite" stock="8" price="1.59">103</product>
+        <product designation="La douce" stock="0" price="1.75">104</product>
+        <product designation="La frite" stock="87" price="1.82">105</product>
     </categorie>
 
     <categorie id="best_sellers">
-        <produit designation="Les lisses" stock="5" price="2.44">201</produit>
-        <produit designation="Les dures" stock="4" price="2.75">202</produit>
-        <produit designation="L'allongee" stock="8" price="1.62">203</produit>
-        <produit designation="La terreuse" stock="0" price="2.26">204</produit>
-        <produit designation="La coco" stock="87" price="2.88">205</produit>
+        <product designation="Les lisses" stock="5" price="2.44">201</product>
+        <product designation="Les dures" stock="4" price="2.75">202</product>
+        <product designation="L'allongee" stock="8" price="1.62">203</product>
+        <product designation="La terreuse" stock="0" price="2.26">204</product>
+        <product designation="La coco" stock="87" price="2.88">205</product>
     </categorie>
 
     <categorie id="prime">
-        <produit designation="La folle" stock="5" price="5.47">301</produit>
-        <produit designation="La pomme carotte" stock="4" price="5.51">302</produit>
-        <produit designation="La sautee" stock="8" price="5.35">303</produit>
-        <produit designation="La belge" stock="0" price="5.96">304</produit>
-        <produit designation="L'ultime" stock="87" price="5.99">305</produit>
+        <product designation="La folle" stock="5" price="5.47">301</product>
+        <product designation="La pomme carotte" stock="4" price="5.51">302</product>
+        <product designation="La sautee" stock="8" price="5.35">303</product>
+        <product designation="La belge" stock="0" price="5.96">304</product>
+        <product designation="L'ultime" stock="87" price="5.99">305</product>
     </categorie>
 </categories>

@@ -9,7 +9,6 @@
     <ul>
         <li><a href="index.php">Accueil</a></li>
         <?php
-            
             foreach ($_SESSION["categories"] as $key => $value) {
                 echo "<li><a href=\"products.php?cat=" . $key . "\">" . $key . "</a></li>";
             }
