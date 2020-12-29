@@ -82,79 +82,51 @@ session_start();
                     <h3 id="txt_genre">Genre</h3>
                     <div id="genre">
                         <div>
-                            <input type="radio" id="homme" name="genre" value="homme">
+                            <input type="radio" id="homme" name="genre" value="homme" <?php if (isset($_GET['genre']) && $_GET['genre'] == 'homme') {
+                                echo "checked";
+                                }?>>
                             <label for="homme">Homme</label>
                         </div>
                         <div>
-                            <input type="radio" id="femme" name="genre" value="femme">
+                            <input type="radio" id="femme" name="genre" value="femme" <?php if (isset($_GET['genre']) && $_GET['genre'] == 'femme') {
+                                echo "checked";
+                                }?>>
                             <label for="femme">Femme</label>
                         </div>
                         <div>
-                            <input type="radio" id="nspp" name="genre" value="nspp">
+                            <input type="radio" id="nspp" name="genre" value="nspp" <?php if (!isset($_GET['genre']) || $_GET['genre'] == 'nspp') {
+                                echo "checked";
+                                }?>>
                             <label for="nspp">Ne se prononce pas</label>
                         </div>
                     </div>
 
                     <h3 id="txt_metier">Metier</h3>
                     <select name="metier" id="metier">
-                        <option value="fournisseur">Fournisseur</option>
-                        <option value="restaurateur">Restaurateur</option>
-                        <option value="particulier">Particulier</option>
+                        <option value="fournisseur" <?php if (!isset($_GET['metier']) || $_GET['metier'] == 'fournisseur') {
+                                echo "selected=\"selected\"";
+                                }?>>Fournisseur</option>
+                        <option value="restaurateur" <?php if (!isset($_GET['metier']) || $_GET['metier'] == 'restaurateur') {
+                                echo "selected=\"selected\"";
+                                }?>>Restaurateur</option>
+                        <option value="particulier" <?php if (!isset($_GET['metier']) || $_GET['metier'] == 'particulier') {
+                                echo "selected=\"selected\"";
+                                }?>>Particulier</option>
                     </select>
                     
                     
                    
                     <h3 id="txt_message">Votre message</h3>
-                    <input class="form_txt" type="text" id="objet" name="objet" placeholder="Objet">
-                    <textarea name="contact_text" id="contact_text" cols="2" rows="6" form="contact_form" placeholder="Posez votre question ici"></textarea>
+                    <input class="form_txt" type="text" id="objet" name="objet" placeholder="Objet" <?php if (isset($_GET['objet']) && $_GET['objet'] == 'ko') {echo "style=\"background-color:red;\"";}?> <?php if (isset($_GET['objet']) && $_GET['objet'] != 'ko') {echo "value=" . $_GET['objet'];}?>>
+                    <textarea name="contact_text" id="contact_text" cols="2" rows="6" form="contact_form" placeholder="Posez votre question ici" <?php if (isset($_GET['message']) && $_GET['message'] == 'ko') {echo "style=\"background-color:red;\"";}?>><?php if (isset($_GET['message']) && $_GET['message'] != 'ko') {
+                        echo $_GET['message'];}?></textarea>
                     <input id="submit" type="submit" value="envoyer">
                 </form>
-
-                <!-- <form method="POST" action="php/form.php" id="contact_form">
-                    
-                    <h3 id="txt_nom">Nom</h3>
-                    <input class="form_txt" id="nom" type="text" name="nom" id="nom" placeholder="NOM" pattern="[A-Z]+" required>
-                    <input class="form_txt" id="prenom" type="text" name="prenom" id="prenom" placeholder="Prenom" pattern="[A-Z][a-z]+" required>
-                    <h3 id="txt_naissance">Date de naissance</h3>
-                    <input class="form_txt" id="naissance" type="date" name="naissance" id="naissance" required>
-                    <h3 id="txt_email">Email</h3>
-                    <input class="form_txt" id="email" type="email" name="email" id="email" placeholder="Email pour vous répondre" required>
-                    
-                    <h3 id="txt_genre">Genre</h3>
-                    <div id="genre">
-                        <div>
-                            <input type="radio" id="homme" name="genre" value="homme" required>
-                            <label for="homme">Homme</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="femme" name="genre" value="femme">
-                            <label for="femme">Femme</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="nspp" name="genre" value="nspp">
-                            <label for="nspp">Ne se prononce pas</label>
-                        </div>
-                    </div>
-
-                    <h3 id="txt_metier">Metier</h3>
-                    <select name="metier" id="metier">
-                        <option value="fournisseur">Fournisseur</option>
-                        <option value="restaurateur">Restaurateur</option>
-                        <option value="particulier">Particulier</option>
-                    </select>
-                    
-                    
-                   
-                    <h3 id="txt_message">Votre message</h3>
-                    <input class="form_txt" type="text" id="objet" name="objet" placeholder="Objet" required>
-                    <textarea name="contact_text" id="contact_text" cols="2" rows="6" form="contact_form" placeholder="Posez votre question ici" required></textarea>
-                    <input id="submit" type="submit" value="envoyer">
-                </form> -->
             </section>
         </main>
         
         <?php require 'footer.html' ?>
 
-        <!-- <script src="js/form.js"></script> -->
+        <script src="js/form.js"></script>
     </body>
 </html>

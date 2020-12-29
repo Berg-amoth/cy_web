@@ -5,6 +5,7 @@
     $date_ok = TRUE;
     $email_ok = TRUE;
     $genre_ok = TRUE;
+    $metier_ok = TRUE;
     $objet_ok = TRUE;
     $message_ok = TRUE;
 
@@ -41,7 +42,12 @@
     $genre = $_POST['genre'];
     if ($genre != "homme" && $genre != "femme" && $genre != "nspp") {
         $genre_ok = FALSE;
-        // echo "genre non";
+    }
+
+    // METIER
+    $metier = $_POST['metier'];
+    if ($metier != "fournisseur" && $metier != "restaurateur" && $metier != "particulier") {
+        $metier_ok = FALSE;
     }
 
     // OBJET
@@ -70,11 +76,17 @@
     }
     else {
         $header_content = "Refresh: 0; url=../contact.php?";
-        if (!$genre_ok) {
-            $header_content .= "genre=ko";
+        if (!$metier_ok) {
+            $header_content .= "metier=ko";
         }
         else {
-            $header_content .= "genre=" . $genre;
+            $header_content .= "metier=" . $metier;
+        }
+        if (!$genre_ok) {
+            $header_content .= "&genre=ko";
+        }
+        else {
+            $header_content .= "&genre=" . $genre;
         }
         if (!$email_ok) {
             $header_content .= "&email=ko";
