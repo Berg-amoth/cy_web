@@ -36,9 +36,9 @@
                                 echo "<tr><td><img src=\"img/" . $_GET["cat"] . "/" . $product['id'] . ".jpg\" alt=\"\"></td>";
                                 echo "<td>#" . $product['id'] . "</td>";
                                 echo "<td>" . $product["designation"] . "</td>";
-                                echo "<td class=\"stock\">" . $product["stock"] . "</td>";
+                                echo "<td class=\"stock\" id=\"" . $product['id'] . "\">" . $product["stock"] . "</td>";
                                 echo "<td>" . $product["price"] . " €</td>";
-                                echo "<td><div class=\"quantite_produit\"><button class=\"bouton_moins\" name=" . $product['id'] . ">-</button><p>0</p><button class=\"bouton_plus\" name=" . $product['id'] . ">+</button></div><button>Commander</button></td></tr>";
+                                echo "<td><div class=\"quantite_produit\"><button class=\"bouton_moins\" name=" . $product['id'] . ">-</button><p>0</p><button class=\"bouton_plus\" name=" . $product['id'] . ">+</button></div><button class=\"bouton_commander\" name=\"" . $product['id'] . "\">Commander</button></td></tr>";
                             }
                         ?>                        
                     </tbody>
