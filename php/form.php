@@ -1,5 +1,4 @@
 <?php
-    $_SESSION['post'] = $_POST;
     $nom_ok = TRUE;
     $prenom_ok = TRUE;
     $date_ok = TRUE;
@@ -63,16 +62,8 @@
     }
 
     // ENVOIE DU MAIL
-    if ($genre_ok && $email_ok && $date_ok && $prenom_ok && $nom_ok && $objet_ok && $message_ok) {
-        $headers = 'From: ' . $prenom . ' ' . $nom . ' &lt;' . $email . "&gt;\r\n";
-        $headers .= 'Reply-To: ' . $email . "\r\n";
-        $headers .= "Content-type: text/html\r\n";
-        if (mail("trash.for.projects@gmail.com",$objet,$message,$headers)) {
-            header("Refresh : 0; url=contact.php?answer");
-        }
-        else {
-            header("Refresh : 0; url=contact.php?answer");
-        }
+    if ($genre_ok && $email_ok && $date_ok && $prenom_ok && $nom_ok && $objet_ok && $message_ok && $metier_ok) {
+        header("Refresh: 0; url=../contact.php?answer");
     }
     else {
         $header_content = "Refresh: 0; url=../contact.php?";

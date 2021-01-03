@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html>
     <?php require 'head.html' ?>
@@ -42,7 +38,7 @@ session_start();
                                 echo "<td>" . $product["designation"] . "</td>";
                                 echo "<td class=\"stock\">" . $product["stock"] . "</td>";
                                 echo "<td>" . $product["price"] . " €</td>";
-                                echo "<td><div class=\"quantite_produit\"><button class=\"bouton_moins\" name=" . $product['id'] . ">-</button><p>0</p><button class=\"bouton_plus\" name=" . $product['id'] . ">+</button></div><button>Ajouter au panier</button></td></tr>";
+                                echo "<td><div class=\"quantite_produit\"><button class=\"bouton_moins\" name=" . $product['id'] . ">-</button><p>0</p><button class=\"bouton_plus\" name=" . $product['id'] . ">+</button></div><button>Commander</button></td></tr>";
                             }
                         ?>                        
                     </tbody>

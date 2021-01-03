@@ -1,8 +1,3 @@
-<?php
-session_start();
-require "php/varSession.inc.php";
-?>
-
 <!DOCTYPE html>
 <html>
     <?php require 'head.html' ?>

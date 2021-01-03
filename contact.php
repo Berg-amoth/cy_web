@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html>
     <?php require 'head.html' ?>
@@ -127,6 +123,10 @@ session_start();
         
         <?php require 'footer.html' ?>
 
+        <!-- Verify form -->
         <script src="js/form.js"></script>
+
+        <!-- If message sent, show an alert -->
+        <?php if (isset($_GET['answer'])) {echo "<script>alert(\"Message envoyé\")</script>";}?>
     </body>
 </html>
