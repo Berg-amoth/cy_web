@@ -3,11 +3,11 @@ DROP DATABASE IF EXISTS cartoufles;
 CREATE DATABASE cartoufles CHARACTER SET "utf8";
 
 -- (re)Creating user
-SET GLOBAL validate_password.policy = 0;
-DROP USER IF EXISTS 'root'@'localhost';
-CREATE USER 'root'@'localhost';
-GRANT ALL PRIVILEGES ON cartoufles.* TO 'root'@'localhost';
-FLUSH PRIVILEGES;
+-- SET GLOBAL validate_password.policy = 0;
+-- DROP USER IF EXISTS 'root'@'localhost';
+-- CREATE USER 'root'@'localhost';
+-- GRANT ALL PRIVILEGES ON cartoufles.* TO 'root'@'localhost';
+-- FLUSH PRIVILEGES;
 
 -- Selecting database
 USE cartoufles;
