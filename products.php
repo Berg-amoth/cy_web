@@ -31,15 +31,19 @@ session_start();
                         </tr>
 
                         <?php
-                        require "php/varSession.inc.php";
-                            foreach ($_SESSION["categories"][$_GET["cat"]] as $key => $value) {
-                                echo "<tr><td><img src=\"img/" . $_GET["cat"] . "/" . $key . ".jpg\" alt=\"\"></td>";
-                                echo "<td>#" . $key . "</td>";
-                                echo "<td>" . $value["designation"] . "</td>";
-                                echo "<td class=\"stock\">" . $value["stock"] . "</td>";
-                                echo "<td>" . $value["price"] . " €</td>";
-                                echo "<td><div class=\"quantite_produit\"><button class=\"bouton_moins\" name=" . $key . ">-</button><p>0</p><button class=\"bouton_plus\" name=" . $key . ">+</button></div><button>Ajouter au panier</button></td></tr>";
-                            }
+                            require_once 'sqlconnect.php';
+
+                            $stmt = $connection->prepare("SELECT * FROM produit WHERE ")
+
+                        // require "php/varSession.inc.php";
+                        //     foreach ($_SESSION["categories"][$_GET["cat"]] as $key => $value) {
+                        //         echo "<tr><td><img src=\"img/" . $_GET["cat"] . "/" . $key . ".jpg\" alt=\"\"></td>";
+                        //         echo "<td>#" . $key . "</td>";
+                        //         echo "<td>" . $value["designation"] . "</td>";
+                        //         echo "<td class=\"stock\">" . $value["stock"] . "</td>";
+                        //         echo "<td>" . $value["price"] . " €</td>";
+                        //         echo "<td><div class=\"quantite_produit\"><button class=\"bouton_moins\" name=" . $key . ">-</button><p>0</p><button class=\"bouton_plus\" name=" . $key . ">+</button></div><button>Ajouter au panier</button></td></tr>";
+                        //     }
                         ?>                        
                     </tbody>
                 </table>
