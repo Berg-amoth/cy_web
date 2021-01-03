@@ -8,11 +8,8 @@
             $stmt->execute();
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             while ($cat = $stmt->fetch()) {
-                echo "<li><a href=\"products.php?cat=" . $cat['categorie'] . "\">" . $cat['categorie'] . "</a></li>";
+                echo "<li><a href=\"products.php?cat=" . $cat['categorie'] . "\">" . str_replace('_', ' ', $cat['categorie']) . "</a></li>";
             }
-            // foreach ($_SESSION["categories"] as $key => $value) {
-            //     echo "<li><a href=\"products.php?cat=" . $key . "\">" . $key . "</a></li>";
-            // }
         ?>
         <li><a href="contact.php">Contact</a></li>
     </ul>

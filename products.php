@@ -16,7 +16,7 @@ session_start();
                 <table>
                     <thead>
                         <tr>
-                            <?php echo "<th colspan=\"2\"><h2>" . $_GET["cat"] . "</h2></th>" ?>
+                            <?php echo "<th colspan=\"2\"><h2>" . str_replace('_', ' ', $_GET["cat"]) . "</h2></th>" ?>
                         </tr>
                     </thead>
 
@@ -31,19 +31,19 @@ session_start();
                         </tr>
 
                         <?php
-                            require_once 'sqlconnect.php';
-
-                            $stmt = $connection->prepare("SELECT * FROM produit WHERE ")
-
-                        // require "php/varSession.inc.php";
-                        //     foreach ($_SESSION["categories"][$_GET["cat"]] as $key => $value) {
-                        //         echo "<tr><td><img src=\"img/" . $_GET["cat"] . "/" . $key . ".jpg\" alt=\"\"></td>";
-                        //         echo "<td>#" . $key . "</td>";
-                        //         echo "<td>" . $value["designation"] . "</td>";
-                        //         echo "<td class=\"stock\">" . $value["stock"] . "</td>";
-                        //         echo "<td>" . $value["price"] . " €</td>";
-                        //         echo "<td><div class=\"quantite_produit\"><button class=\"bouton_moins\" name=" . $key . ">-</button><p>0</p><button class=\"bouton_plus\" name=" . $key . ">+</button></div><button>Ajouter au panier</button></td></tr>";
-                        //     }
+                            require_once 'php/sqlconnect.php';
+                            $cat = $_GET['cat'];
+                            $stmt = $connection->prepare("SELECT * FROM produit WHERE categorie LIKE '$cat'");
+                            $stmt->execute();
+                            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                            while ($product = $stmt->fetch()) {
+                                echo "<tr><td><img src=\"img/" . $_GET["cat"] . "/" . $product['id'] . ".jpg\" alt=\"\"></td>";
+                                echo "<td>#" . $product['id'] . "</td>";
+                                echo "<td>" . $product["designation"] . "</td>";
+                                echo "<td class=\"stock\">" . $product["stock"] . "</td>";
+                                echo "<td>" . $product["price"] . " €</td>";
+                                echo "<td><div class=\"quantite_produit\"><button class=\"bouton_moins\" name=" . $product['id'] . ">-</button><p>0</p><button class=\"bouton_plus\" name=" . $product['id'] . ">+</button></div><button>Ajouter au panier</button></td></tr>";
+                            }
                         ?>                        
                     </tbody>
                 </table>
